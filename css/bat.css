@@ -2,13 +2,14 @@
     padding: 0;
     font-family: Arial;
 }
-html body .container{height: 100%;}
+html body{height: 100%;}
 .container{width: 70%;
+    height: 100%;
     margin: 0 auto;
 }
 .right-menu li{list-style: none;}
 
-.grid-header{display: grid;                /* шапка */
+.grid-header{display: grid;                                                                                              /* шапка */
     grid-template-columns: 180px 1fr;
     /*background: #e5e5e5;*/
 }
@@ -26,34 +27,31 @@ html body .container{height: 100%;}
 .title-name p{text-align: center;
 
 }
-.grid-container{display: grid;           /* домашняя страница */
+.grid-container{display: grid;                                                                                           /* домашняя страница */
     /*background: #fdfded;*/
     grid-template-columns: 1fr 260px;
-    grid-gap: 16px;
+    height: 100%;
+    /*grid-gap: 16px;*/
+    /*margin-bottom: 20px;*/
 }
-.block-text{font-size: 18px;
-    padding: 8px;
-    margin: 16px;
+.block-text{font-size: 18px;                                                                                             /* основной контент страницы */
+    /*padding: 8px;*/
+    height: 100%;
+    margin: 18px 36px 36px 18px;
     grid-column: 1 / 2;
 }
-.block-text p, .block-text-me p, .block-text-bat p, .block-text-help{margin: 8px 0;}
-.block-text img, .block-text-me img{margin: 16px 100px;}
-.block-text-me{font-size: 18px;             /* о нас */
-    padding: 8px;
-    margin: 16px;
-    grid-column: 1 / 2;
+.bat-foto{
 }
-.block-text-bat{font-size: 18px;            /* вы нашли летучую мышь */
-    padding: 8px;
-    margin: 16px;
-    grid-column: 1 / 2;
+.block-text p{margin: 12px 0;}
+.block-text img{margin: 16px 100px;}
+
+.right-menu{/*background: #d7fcd0;*/                                                                                     /* правая колонка */
+    grid-column: 2/3;
+    grid-area: -4/-2;
+    height: 100%;
+    margin-bottom: 36px;
 }
-.block-text-help{font-size: 18px;             /* помощь центру */
-    padding: 8px;
-    margin: 16px;
-    grid-column: 1 / 2;
-}
-.bat-attention{height: 46px;              /* типа кнопка вы нашли летучую мышь */
+.bat-attention {height: 46px;                                                                                            /* вы нашли летучую мышь */
     width: 99%;
     font-size: 18px;
     border: orangered 2px solid;
@@ -61,11 +59,7 @@ html body .container{height: 100%;}
     text-align: center;
     padding-top: 6px;
     font-weight: bold;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
-.right-menu{/*background: #d7fcd0;*/     /* правая колонка */
-    grid-column: 2/3;
-    grid-area: -4/-2;
+    box-shadow: 0 14px 28px rgb(0, 0, 0, 0.22), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 .bat-attention p{color: black;
 }
@@ -77,30 +71,57 @@ html body .container{height: 100%;}
     text-align: center;
     /*padding-top: 6px;*/
     font-weight: bold;
-    margin: 16px 0;
+    margin: 32px 0;
+    padding-top: 8px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22), 0 10px 10px rgba(0, 0, 0, 0.20);
 }
-.bat-me a, .bat-gallery a, .bat-donat a{color: black; text-decoration: none;
+.bat-me, .bat-gallery, .bat-donat{height: 36px;                                                                          /* о нас */
+    width: 99%;
+    /*border: black 2px solid;*/
+    text-align: center;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22), 0 10px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 32px;
+    padding-top: 16px;
+}
+.bat-me a, .bat-gallery a, .bat-donat a, .foot-menu a{color: black; text-decoration: none;}
+
+.bat-me a:hover, .bat-gallery a:hover, .bat-donat a:hover{color: blue; text-decoration: underline;}
+
+.page-gallery{display:grid;                                                                                               /* галерея */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 350px);
+    grid-gap: 8px;
+    margin: 18px 36px 36px 18px;
+}
+.page-gallery div{border: 1px solid black;
+    border-radius: 7px;
+}
+.page-gallery img{border-radius: 7px;}
+.page-gallery div img{object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.fotka{position: relative;}
+.bat-name{width: 180px;
+    height: 30px;
+    position: absolute;
+    text-align: center;
+    box-shadow: inset 0 0 30px 5px yellow;
 }
 
-.bat-me a:hover, .bat-gallery a:hover, .bat-donat a:hover{color: blue; text-decoration: underline;
+.bat-social{height: 56px;                                                                                                /* соцсети */
+    width: 99%;
+    text-align: center;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22), 0 10px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 32px;
+    padding-top: 16px;
 }
 
-.bat-released{
-}
-
-.bat-pmz{
-}
-
-.bat-donat{
-}
-
-.bat-social{
-}
-
-.grid-footer{display: grid;              /* подвал*/
+.grid-footer{display: grid;                                                                                              /* подвал*/
     background: #2f2f2f;
     grid-template-columns: 250px 1fr 250px;
-    height: 80px;
+    height: 86px;
+    margin-top: 16px;
 }
 .copyright, .foot-fone{text-align: center;
     color: white;
@@ -120,11 +141,7 @@ html body .container{height: 100%;}
 .foot-menu a{color: white;
     margin: 0 90px;
 }
-.foot-fone{
-
+.foot-menu a:hover{text-decoration: underline;}
+.foot-fone, .copyright, .foot-menu a{box-shadow: 0 10px 14px rgb(203, 203, 203, 0.3), 0 10px 10px rgb(203, 203, 203, 0.3);
 }
-/*.logo, .title-name, .block-text, .copyright, .foot-menu, .foot-fone{border: 1px solid black;}*/
-
-.bat-me, .bat-gallery, .bat-donat, .bat-social{margin: 16px;}
-
-/* кнопки */
+h2 {margin: 16px 0;}
