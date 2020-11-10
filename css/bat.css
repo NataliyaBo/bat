@@ -11,7 +11,7 @@ html body{height: 100%;}
 
 .grid-header{display: grid;                                                                                              /* шапка */
     grid-template-columns: 180px 1fr;
-    /*background: #e5e5e5;*/
+    grid-template-rows: 180px;
 }
 .logo{width: 180px;
     height: 180px;
@@ -20,20 +20,17 @@ html body{height: 100%;}
 }
 .logo a img{border-radius: 56px;}
 .title-name{width: 100%;
-    font-size: 38px;
     font-weight: bold;
     margin: auto;
 }
-.title-name p{text-align: center;
-
+.title-name h1{text-align: center;
 }
-.grid-container{display: grid;                                                                                           /* домашняя страница */
-    /*background: #fdfded;*/
+.grid-container {
+    display: grid; /* домашняя страница */
     grid-template-columns: 1fr 260px;
     height: 100%;
-    /*grid-gap: 16px;*/
-    /*margin-bottom: 20px;*/
 }
+
 .block-text{font-size: 18px;                                                                                             /* основной контент страницы */
     /*padding: 8px;*/
     height: 100%;
@@ -45,8 +42,7 @@ html body{height: 100%;}
 .block-text p{margin: 12px 0;}
 .block-text img{margin: 16px 100px;}
 
-.right-menu{/*background: #d7fcd0;*/                                                                                     /* правая колонка */
-    grid-column: 2/3;
+.right-menu{grid-column: 2/3;                                                                                            /* правая колонка */
     grid-area: -4/-2;
     height: 100%;
     margin-bottom: 36px;
@@ -69,7 +65,6 @@ html body{height: 100%;}
     width: 100%;
     font-size: 18px;
     text-align: center;
-    /*padding-top: 6px;*/
     font-weight: bold;
     margin: 32px 0;
     padding-top: 8px;
@@ -77,7 +72,6 @@ html body{height: 100%;}
 }
 .bat-me, .bat-gallery, .bat-donat{height: 36px;                                                                          /* о нас */
     width: 99%;
-    /*border: black 2px solid;*/
     text-align: center;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22), 0 10px 10px rgba(0, 0, 0, 0.2);
     margin-top: 32px;
@@ -118,8 +112,10 @@ html body{height: 100%;}
     margin-top: 32px;
     padding-top: 16px;
 }
+.bat-social a img{margin: 3px 6px 0 6px;
+}
 
-.grid-footer{display: grid;                                                                                              /* подвал*/
+.grid-footer{display: grid;                                                                                             /* подвал*/
     background: #2f2f2f;
     grid-template-columns: 250px 1fr 250px;
     height: 86px;

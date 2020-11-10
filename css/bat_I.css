@@ -1,0 +1,27 @@
+*{padding: 0;
+    margin: 0;
+}
+html body{height: 100%;
+    margin: 0;
+}
+.container{width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.heder{
+}
+.logo{
+}
+.title-name{
+}
+
+.content-area{
+}
+.basic-information{
+}
+.block_menu{
+}
+
+.footer{
+}
