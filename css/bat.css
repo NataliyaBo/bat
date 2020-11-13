@@ -7,7 +7,7 @@ html body{height: 100%;}
     height: 100%;
     margin: 0 auto;}
 
-.grid-header{display: grid;                                                                                              /* шапка */
+.grid_header{display: grid;                                                                                              /* шапка */
     grid-template-columns: 180px 1fr;
     grid-template-rows: 180px;}
 .logo{width: 180px;
@@ -15,30 +15,30 @@ html body{height: 100%;}
     align-content: center;
     margin: 20px 0 0 20px;}
 .logo a img{border-radius: 56px;}
-.title-name{width: 100%;
+.title_name{width: 100%;
     font-weight: bold;
     margin: auto;}
-.title-name h1{text-align: center;}
+.title_name h1{text-align: center;}
 
-.grid-container {display: grid;                                                                                          /* домашняя страница */
+.grid_container {display: grid;                                                                                          /* домашняя страница */
     grid-template-columns: 1fr 260px;
     height: 100%;}
 
-.block-text{font-size: 18px;                                                                                             /* основной контент страницы */
+.block_text{font-size: 18px;                                                                                             /* основной контент страницы */
     height: 100%;
     margin: 18px 36px 36px 18px;
     grid-column: 1 / 2;}
-.bat-foto{}
-.block-text p{margin: 12px 0;}
-.block-text img{margin: 16px 100px;}
+.bat_foto{}
+.block_text p{margin: 12px 0;}
+.block_text img{margin: 16px 100px;}
 
-.right-menu{grid-column: 2/3;                                                                                            /* правая колонка */
+.right_menu{grid-column: 2/3;                                                                                            /* правая колонка */
     grid-area: -4/-2;
     height: 100%;
     margin-bottom: 30px;}
-.right-menu li{list-style: none;}
+.right_menu li{list-style: none;}
 
-.bat-attention {height: 46px;                                                                                            /* вы нашли летучую мышь */
+.bat_attention {height: 46px;                                                                                            /* вы нашли летучую мышь */
     width: 99%;
     font-size: 18px;
     border: orangered 2px solid;
@@ -46,12 +46,12 @@ html body{height: 100%;}
     text-align: center;
     padding-top: 6px;
     font-weight: bold;
-    box-shadow: 0 14px 28px rgb(0, 0, 0, 0.22), 0 10px 10px rgba(0, 0, 0, 0.22);}
-.bat-attention p{color: black;}
-.bat-attention a{text-decoration: none;}
-.bat-attention a:hover{text-decoration: underline;}
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22), 0 10px 10px rgba(0, 0, 0, 0.22);}
+.bat_attention p{color: black;}
+.bat_attention a{text-decoration: none;}
+.bat_attention a:hover{text-decoration: underline;}
 
-.bat-fone{height: 46px;                                                                                                  /* позвонить */
+.bat_fone{height: 46px;                                                                                                  /* позвонить */
     width: 100%;
     font-size: 18px;
     text-align: center;
@@ -59,85 +59,107 @@ html body{height: 100%;}
     margin: 32px 0;
     padding-top: 8px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22), 0 10px 10px rgba(0, 0, 0, 0.20);}
-.bat-fone a, .bat-fone a p{color: black;}
-.bat-fone a{text-decoration: none;}
-.bat-fone a:hover{text-decoration: underline;}
+.bat_fone a, .bat_fone a p{color: black;}
+.bat_fone a{text-decoration: none;}
+.bat_fone a:hover{text-decoration: underline;}
 
-.bat-me, .bat-gallery, .bat-donat{height: 36px;                                                                          /* о нас, галерея, донат: общ. харкактеристика */
+.bat_me, .bat_gallery, .bat_donat{height: 36px;                                                                          /* о нас, галерея, донат: общ. харкактеристика */
     width: 100%;
     text-align: center;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22), 0 10px 10px rgba(0, 0, 0, 0.2);
     margin-top: 32px;
     padding-top: 16px;}
-.bat-me a, .bat-gallery a, .bat-donat a, .foot-menu a{color: black; text-decoration: none;}                             /* ссылки в обычном режиме */
+.bat_me a, .bat_gallery a, .bat_donat a, .foot_menu a{color: black; text-decoration: none;}                             /* ссылки в обычном режиме без подчеркивания */
 
-.bat-me a:hover, .bat-gallery a:hover, .bat-donat a:hover{color: blue; text-decoration: underline;}                      /* ссылки при наведении мыши */
+.bat_me a:hover, .bat_gallery a:hover, .bat_donat a:hover{color: blue; text-decoration: underline;}                      /* ссылки при наведении мыши, с подчеркиванием */
 
-.page-gallery{display:grid;                                                                                               /* галерея */
+.page_gallery{display:grid;                                                                                               /* галерея */
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3, 350px);
-    grid-gap: 8px;
+    grid-gap: 12px;
     margin: 18px 36px 36px 18px;}
-.page-gallery div{border: 1px solid black;
+.page_gallery div{border: 1px solid black;
     border-radius: 7px;}
-.page-gallery img{border-radius: 7px;}
-.page-gallery div img{object-fit: cover;
+.page_gallery img{border-radius: 7px;}
+.page_gallery div img{object-fit: cover;
     height: 100%;
     width: 100%;}
-.fotka{position: relative;}
-
-.bat-name{width: 180px;                                                                                                  /* информ. плашка на фото */
-    height: 28px;
+.gallery_foto{display: inline-block;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #000;}
+.fotka{display: block;
+    max-width: 100%;
+    transition: opacity .2s ease-in-out;}
+.gallery_foto:after, .gallery_foto:before{box-sizing: border-box;
     position: absolute;
+    width: 100%;
+    padding: 20px;
+    color: #fff;
+    transition: transform .4s ease-out;}
+.gallery_foto:after{content: attr(data-title);
+    top: 0;
+    height: 20%;
+    background: rgba(0,0,0, .4);
+    font-size: 28px;
+    font-weight: 300;
     text-align: center;
-    box-shadow: inset 0 0 30px 5px yellow;
-    margin-top: -42px;
-    padding-top: 8px;}
+    transform: translateY(-100%) scale(.8);}
+.gallery_foto:before{content: attr(data-description) "…";
+    top: 20%;
+    height: 80%;
+    background: rgba(118, 123, 129, 0.4);
+    font-size: 17.5px;
+    transform: translateY(100%) scale(.8);}
+.gallery_foto:hover:after, .gallery_foto:hover:before{transform: translateY(0%) scale(1);}
 
-.bank_tnff{color: #ffcb2f;}                                                                                               /* донат/помощь */
+.bank_tnff{color: #ffcb2f;}                                                                                              /* донат/помощь */
 .bank_sbr{color: #00c635;}
 .bank_tnff, .bank_sbr{text-shadow: black 0 0 1.5px; font-size: 20px}
-.donat{height: 36px; width: 400px;}
+.donat{height: 36px; width: 400px; margin-top: 18px}
 .donat ul{list-style-type: none;}
 .donat li{display: inline;}
-.donat-dp a, .donat-pp a{text-decoration: none; color: black;}
-.donat-dp a:hover, .donat-pp a:hover{text-decoration: underline; color: #4caf50;}
-.donat-dp a img{margin: 0; border: 1px solid black; border-radius: 8px}
-.donat-pp a img{margin: 0; border: 1px solid #0795d7; border-radius: 8px;}
+.donat_dp{margin-right: 20px;}
+.donat_dp a, .donat_pp a{text-decoration: none; color: black;}
+.donat_dp a:hover, .donat_pp a:hover{text-decoration: underline; color: #4caf50;}
+.donat_dp a img{margin: 0; border: 1px solid black; border-radius: 8px}
+.donat_pp a img{margin: 0; border: 1px solid #0795d7; border-radius: 8px;}
 
-.bat-social{height: 56px;                                                                                                /* кнопки соцсетей */
+.bat_social{height: 56px;                                                                                                /* кнопки соцсетей */
     width: 99%;
     text-align: center;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22), 0 10px 10px rgba(0, 0, 0, 0.2);
     margin-top: 32px;
     padding-top: 16px;}
-.bat-social a img{margin: 3px 6px 0 6px;}
+.bat_social a img{margin: 3px 6px 0 6px;}
 
-.grid-footer{display: grid;                                                                                             /* подвал */
+.grid_footer{display: grid;                                                                                             /* подвал */
     background: #2f2f2f;
     grid-template-columns: 250px 1fr 250px;
     height: 86px;
     margin-top: 16px;}
-.copyright, .footer-fone{text-align: center;
+.copyright, .footer_fone{text-align: center;
+    height: 22px;
     color: white;
     font-weight: bold;
     margin: auto;}
-.copyright a{text-decoration: none;
-    color: white;
+.copyright a{color: white;                                                                                                /* адрес сайта */
     margin: 0 4px;}
-.copyr:before{content: '\00A9';}
-.footer-menu{display: inline;
+.copyr:before{content: '\00A9';}                                                                                         /* знак копирайта */
+.footer_menu{display: inline;
+    height: 22px;
     text-align: center;
     font-weight: bold;
     margin: auto;}
-.footer-menu a{ color: white; margin: 0 90px;}
-.footer-menu a, .footer-fone a{text-decoration: none;}
-.footer-menu a:hover, .footer-fone a:hover{text-decoration: underline;}
-.footer-fone, .copyright, .footer-menu a{box-shadow: 0 10px 14px rgb(203, 203, 203, 0.3), 0 10px 14px rgb(203, 203, 203, 0.3);}
+.footer_menu a{ color: white; margin: 0 90px;}
+.footer_menu a, .footer_fone a, .copyright a{text-decoration: none;}
+.footer_menu a:hover, .footer_fone a:hover{text-decoration: underline;}
+/*.footer_menu, .copyright, .footer_fone{text-shadow: 0 10px 14px rgb(240, 158, 70), 0 10px 24px rgba(240, 158, 70, 0.7);}*/
 
-.footer-fone a{color: white;}                                                                                             /* позвонить */
+.footer_fone a{color: white;}                                                                                             /* позвонить */
 
 h2 {margin: 16px 0;}
-.ghost{height: 36px;
+.ghost{height: 36px;                                                                                                     /* пустые блоки */
     width: 100%;
     margin-top: 31px;}
