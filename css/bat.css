@@ -116,7 +116,7 @@ html body{height: 100%;}
 
 .bank_tnff{color: #ffcb2f;}                                                                                              /* донат/помощь */
 .bank_sbr{color: #00c635;}
-.bank_tnff, .bank_sbr{text-shadow: black 0 0 1.5px; font-size: 20px}
+.bank_tnff, .bank_sbr{font-size: 20px; font-weight: bold;}
 .donat{height: 36px; width: 400px; margin-top: 18px}
 .donat ul{list-style-type: none;}
 .donat li{display: inline;}
